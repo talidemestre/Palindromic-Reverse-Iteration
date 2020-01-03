@@ -11,7 +11,7 @@ function calculatePalindrome(){
 
   console.log("The current value is " + pal + ".")
 
-  calcLoop = window.setInterval(iteratePalindrome, 0.01);
+  calcLoop = window.setInterval(iteratePalindrome, 0.0000001);
 
   function iteratePalindrome(){
     if (isPalindrome(palString)){
@@ -21,11 +21,10 @@ function calculatePalindrome(){
 
     document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
 
-    console.log(pal)
     pal = pal.plus(Big(reverseString(palString)))
     step += 1;
     palString = pal.toFixed()
-    console.log("The current value is " + pal + ".")
+    //console.log("The current value is " + pal + ".")
 
   }
 }
@@ -33,7 +32,6 @@ function calculatePalindrome(){
 function isPalindrome(numString){
   if (numString == reverseString(numString)){
     return true;
-    console.log("struth")
 
   } else {
     return false;
