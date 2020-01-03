@@ -20,15 +20,17 @@ html {
  * Remove the margin in all browsers.
  */
 
+header {
+  margin-top: 0;
+  margin-left: 0;
+  margin-right: 0;
+}
 body {
-  margin-top: 5%;
-  margin-left: 10%;
-  margin-right: 10%;
+
 }
 
 
 p {
-  text-justify: inner-word;
   word-wrap: break-word;
   font-family: sans-serif;
 
@@ -41,6 +43,9 @@ p {
  */
 
 main {
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
   display: block;
 }
 
@@ -89,6 +94,9 @@ pre {
 
 a {
   background-color: transparent;
+  color: inherit;
+  text-decoration: inherit;
+
 }
 
 /**

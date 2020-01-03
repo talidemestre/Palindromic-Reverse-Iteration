@@ -6,3 +6,8 @@
   width: 50px;
   font-family: sans-serif;
 }
+
+.faint {
+  color:#f0f0f0;
+  font-size:6px;
+}
