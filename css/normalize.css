@@ -21,7 +21,16 @@ html {
  */
 
 body {
-  margin: 0;
+  margin-top: 5%;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+
+
+p {
+  text-justify: inner-word;
+  word-wrap: break-word;
+
 }
 
 /**
@@ -40,6 +49,7 @@ main {
 h1 {
   font-size: 2em;
   margin: 0.67em 0;
+  text-align: center;
 }
 
 /* Grouping content

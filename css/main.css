@@ -21,13 +21,6 @@ html {
 User Defined
  */
 
-p {
-  text-justify: inner-word;
-  word-wrap: break-word;
-
-
-}
-
 
 /*
  * Remove text-shadow in selection highlight:
