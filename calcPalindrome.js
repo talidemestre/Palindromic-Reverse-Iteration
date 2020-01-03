@@ -7,11 +7,9 @@ function calculatePalindrome(){
   var palString = document.getElementById("palInteger").value;
   var step = 0;
   var pal = Big(palString);
-  console.log("initial pal string is " + palString)
   var palInitial = palString;
 
-  console.log(pal);
-  console.log("pal is" + pal)
+  console.log("The current value is " + pal + ".")
 
   calcLoop = window.setInterval(iteratePalindrome, 0.01);
 
@@ -19,18 +17,15 @@ function calculatePalindrome(){
     if (isPalindrome(palString)){
       document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
       window.clearInterval(calcLoop);
-      console.log("should stop")
     }
 
     document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
 
-    console.log("calculating")
     console.log(pal)
-    //pal += 1;
     pal = pal.plus(Big(reverseString(palString)))
     step += 1;
     palString = pal.toFixed()
-    console.log("pal string is" + palString)
+    console.log("The current value is " + pal + ".")
 
   }
 }
