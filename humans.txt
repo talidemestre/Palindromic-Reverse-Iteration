@@ -3,13 +3,13 @@
 
 # TEAM
 
-    <name> -- <role> -- <twitter>
-
+    Tali de Mestre -- Hacker and Human -- taliesindemestre.com
+    
 # THANKS
 
-    <name>
-
+    Neville de Mestre
+    
 # TECHNOLOGY COLOPHON
 
     CSS3, HTML5
-    Apache Server Configs, jQuery, Modernizr, Normalize.css
+    Big.js, jQuery, Normalize.css
