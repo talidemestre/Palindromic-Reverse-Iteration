@@ -10,13 +10,12 @@ function calculatePalindrome(){
   var pal = Big(palString);
   var palInitial = palString;
 
-  console.log("The current value is " + pal + ".")
+  //console.log("The current value is " + pal + ".")
 
   calcLoop = window.setInterval(iteratePalindrome, 0.0000001);
 
   document.getElementById("start-button").onclick = function(){
     window.clearInterval(calcLoop)
-    console.log("trying")
     calculatePalindrome()
   }
 
