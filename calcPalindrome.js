@@ -3,6 +3,7 @@ var step = 0;
 var pal = Big(0);
 var palInitial = "";
 
+
 function calculatePalindrome(){
   var palString = document.getElementById("palInteger").value;
   var step = 0;
@@ -13,8 +14,14 @@ function calculatePalindrome(){
 
   calcLoop = window.setInterval(iteratePalindrome, 0.0000001);
 
+  document.getElementById("start-button").onclick = function(){
+    window.clearInterval(calcLoop)
+    console.log("trying")
+    calculatePalindrome()
+  }
+
   function iteratePalindrome(){
-    if (isPalindrome(palString)){
+    if (palString == reverseString(palString)){
       document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
       window.clearInterval(calcLoop);
     }
@@ -29,15 +36,6 @@ function calculatePalindrome(){
   }
 }
 
-function isPalindrome(numString){
-  if (numString == reverseString(numString)){
-    return true;
-
-  } else {
-    return false;
-  }
-
-}
 
 function reverseString(str) {
   return str.split("").reverse().join("");
