@@ -20,8 +20,8 @@ function calculatePalindrome(){
   };
 
   function iteratePalindrome(){
-    if (palString == reverseString(palString)){
-      document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
+    if (palString === reverseString(palString)){
+      document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +".";
       window.clearInterval(calcLoop);
     }
 
