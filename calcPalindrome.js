@@ -15,9 +15,9 @@ function calculatePalindrome(){
   calcLoop = window.setInterval(iteratePalindrome, 0.0000001);
 
   document.getElementById("start-button").onclick = function(){
-    window.clearInterval(calcLoop)
+    window.clearInterval(calcLoop);
     calculatePalindrome()
-  }
+  };
 
   function iteratePalindrome(){
     if (palString == reverseString(palString)){
@@ -25,9 +25,9 @@ function calculatePalindrome(){
       window.clearInterval(calcLoop);
     }
 
-    document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +"."
+    document.getElementById("readout").innerHTML = "The integer " + palInitial + " takes " + step + " steps to reach the palindrome " + palString +".";
 
-    pal = pal.plus(Big(reverseString(palString)))
+    pal = pal.plus(Big(reverseString(palString)));
     step += 1;
     palString = pal.toFixed()
     //console.log("The current value is " + pal + ".")
