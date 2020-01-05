@@ -7,7 +7,14 @@
   font-family: sans-serif;
 }
 
+li {
+  font-family: sans-serif
+}
+
 .faint {
   color:#f0f0f0;
   font-size:6px;
+  background-color: transparent;
+  text-decoration: inherit;
+
 }
