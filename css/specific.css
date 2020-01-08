@@ -26,3 +26,14 @@ h2 {
   text-decoration: inherit;
 
 }
+
+.f-image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.f-image-wide {
+  width: 100%
+}
