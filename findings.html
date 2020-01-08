@@ -96,9 +96,20 @@
 
   <h2>6. The Reverse Lychrel Process</h2>
   <p>
-    The reverse Lychrel process is much like the regular Lychrel process but instead of addition, we subtract and take the absolute value. For example for 196, we take 196 from 691 giving 495. Then we take 495 from 594 which gives 99, a palindrome. In fact, this reverse process generates a palindrome for many numbers we typically consider to be 'lychrel' numbers, and conversely many numbers that will form a palindrome by the regular process will not form a palindrome by this process. Even more interestingly, there is a subset of numbers which do not form a palindrome by either of the two processes. I personally call these numbers the 'true Lychrels' and the first few are 1947, 5258, 6347, 6490, 7436, 7491, 7689, 8349, 8525, 8899, 9438, 9867, 9988....]
+    The reverse Lychrel process is much like the regular Lychrel process but instead of addition, we subtract and take the absolute value. For example for 196, we take 196 from 691 giving 495. Then we take 495 from 594 which gives 99, a palindrome. In fact, this reverse process generates a palindrome for many numbers we typically consider to be 'lychrel' numbers, and conversely many numbers that will form a palindrome by the regular process will not form a palindrome by this process. Even more interestingly, there is a subset of numbers which do not form a palindrome by either of the two processes. I personally call these numbers the 'true Lychrels' and the first few are 1947, 5258, 6347, 6490, 7436, 7491, 7689, 8349, 8525, 8899, 9438, 9867, 9988....
     <br><br>
     It is interesting to note that the palindromes formed by this process seemingly fall into 1 of 3 forms, these being numbers of all 9s (9, 99, 999 etc), 0s bookended by 9s (909, 9009, 90009 etc), or 9s bookended by 5 and 4 (5445, 5495, 54995 etc).  Also of note is that seemingly all numbers that fail to form a palindrome fall into alternating between two numbers over and over again (i.e. one such loop is formed like so: 8712 - 2178 = 6534, while 6534 - 4356 = 2178, forming an infinite loop).
+  </p>
+
+  <h3>7. Digit Distribution over Lychrel Numbers</h3>
+  <p>
+    At the very end of my investigations, I reinvestigated the frequency of digits but instead of looking at just 196 I instead looked at the digits appearing in the first 115,752 Lychrel numbers (up to 1,000,000). This told more of a story as you can quite clearly see in the graph below there is a positive correlation between the value of a digit and its likelihood to appear in a Lychrel number. Note that there is almost double the amount of 9s as there are 0s in this dataset. I think this is due to an increased likelihood for carrying to occur during addition when numbers have digits of higher values, this carrying will disrupt the Lychrel process. This may give insight as to what 'makes' a Lychrel number to someone with much more mathematical knowledge than myself.
+  </p>
+  <img src="images/LychrelDigitDistribution1000000.png" alt="Smooth Distribution Graph" class="f-image">
+
+  <h3>Conclusion</h3>
+  <p>
+    After much investigation, I am personally no closer to understanding why it is that some numbers converge to palindrome and some do not. Nor am I any closer to understanding why 89 takes 24 steps to form a palindrome when every other number under 1000 is significantly faster to converge. I would like to reiterate that for anyone interested all of my Jupyter notebooks are available <a href="https://github.com/talidemestre/Lychrel-Process-Datasets">here.</a> If you discover something that you would like added to the site feel free to email to <a href="mailto:talidemestre@gmail.com">this address.</a> Happy hunting!
   </p>
 
   <script src="js/vendor/modernizr-3.8.0.min.js"></script>
