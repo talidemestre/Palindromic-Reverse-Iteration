@@ -1,4 +1,5 @@
 *.csv
+*.xml
 **/.ipynb_checkpoints
 **/.idea
 pallette.png
