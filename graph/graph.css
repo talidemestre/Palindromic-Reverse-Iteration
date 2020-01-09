@@ -3,6 +3,14 @@
     src: url("borg.ttf");
 }
 
+a {
+  color: lightskyblue;
+}
+
+a:visited {
+    color: lightseagreen;
+}
+
 p {
     color: whitesmoke;
     font-family: sans-serif;
