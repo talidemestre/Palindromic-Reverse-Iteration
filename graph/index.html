@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Graphs</title>
+
+    <link rel="stylesheet" href="graph.css">
+    <!--Fade animations-->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+
+</head>
+
+<body style="background-color:black; overflow-x: hidden; overflow-y: hidden">
+
+
+
+<header>
+    <p class="faint" style="color: #2a2a2a; text-decoration: inherit;  font-size:6px">For <a style="color: inherit; text-decoration: inherit;  font-size:6px" href="https://mathematicscentre.com/taskcentre/mestre.htm">Neville de Mestre</a></p>
+</header>
+<div id="msg" class="centred" style="font-size:6vw; ">
+    <!-- you can set whatever style you want on this -->
+    <p style="text-align: center">Loading, please wait...</p>
+</div>
+
+<div id="body">
+
+<h1 data-aos="fade-down" data-aos-duration="1000">LYCHREL GRAPHS</h1>
+<h2 data-aos="fade-down" data-aos-duration="2000">1. The First 100,000 Integers </h2>
+<p data-aos="fade-down" data-aos-duration="3000">
+    This section graphs how the distance between Lychrel numbers change as we look at higher values, up to a value of
+    100,000 in this case.
+</p>
+<iframe data-aos="fade-up" data-aos-duration="3000"  class="igraph" scrolling="no" style="border:none; text-align: right"  src="First6020Lychrel.html" height="525"></iframe>
+
+<p data-aos="fade-right" >
+    We can see that the gap between Lychrel numbers decreases as they get larger. This is indicative of an increasing
+    frequency of Lychrel numbers as we approach higher values.
+    <br><br>
+    We would next like to remove (as many a possible) seed numbers, but this gets rapidly complex as I shall explain
+    further down. As there are many conflicting definitions of "seed" numbers out there on the internet, I have decided
+    to use the one which both makes computing them much simpler and personally makes more sense to me in terms of
+    isolating the properties that lead to a number not converging under the Lychrel algorithm.
+    <br><br>
+    For this demonstration I have defined "seed" numbers to be any number for which the Lychrel process never results in
+    a palindrome, but cannot be formed by applying a partial Lychrel process to a smaller Lychrel number. This does
+    however includes numbers that converge into the same series (i.e. 196 and 295 both go to 887 on one step). It is my
+    view that this is the most practical way to define a seed number as it allows us to investigate <b>all</b> numbers
+    which lead into an infinite Lychrel series. To avoid confusion I will from here on refer to them as
+    <u><b>producer numbers</b></u> as they 'produce' an infinite Lychrel series.
+    <br><br>
+    Joyfully, this also makes the computation of seed numbers less complex as we can use an O(n²) algorithm rather
+    than an O(n³) algorithm. While this is not a ʰᵘᵍᵉ issue, it could become a problem if I computed datasets
+    larger than the few thousand values I have processed here.
+</p>
+
+<iframe data-aos="fade-up"  class="igraph" scrolling="no" style="border:none;"  src="First6020SeedLychrel.html" height="525"></iframe>
+<p data-aos="fade-up-left">
+    This graph looks largely the same as the previous one. For the dataset of the first 6020 Lychrel numbers, taking only the producer numbers eliminated less than 100 data points.
+    <br><br>
+    Next I decided to try expanding the definition of seed numbers to exclude the higher of two palindromes (i.e. 196 remains in the data set but 196 is removed. At the time this made some intuitive sense as a dataset worthy of investigation but I have explained below why I do not think it does not hold particular insight.
+</p>
+<iframe data-aos="fade-left" class="igraph" scrolling="no" style="border:none"  src="First6020LowerSeedLychrel.html" height="525"></iframe>
+<p data-aos="fade-right">
+    As you can see above, the decline on this graph does not behave in quite the same way as the previous ones, with a quite a number of oddities.
+    <br><br>
+    The chart spikes back up dramatically in two regions it had not before:
+</p>
+<ul>
+    <li data-aos="fade-right">Starting at near 50000 and continuing to around 80000 there is a significant spike in the distance between Lychrel numbers.</li>
+    <li data-aos="fade-right">Starting at 90000 going up to the end of the data set here is a another spike, maximizing at a distance of 461.</li>
+</ul>
+<p data-aos="fade-right">
+    I think this is because at these regions the reverse of these integers have already occurred (i.e. 56063 has already occurred as 360605 has been removed). This then becomes especially true in the 90000s as all Lychrel numbers that don't end in a 9 or a 0 have already had their reverse occur and have thus been stripped, leading to an increased gap between producers. The dip occuring over the 80000s I cannot determine an intuitive explanation for, my best theory is that Lychrel numbers occuring here seem to more often end in a 9 or 0 than in other regions above 50000 and thus they begin to occur closer together.
+    <br><br>
+    I do not believe there is much insight to extract regarding the nature of Lychrel numbers from this definition of seed numbers, yet is interesting to investigate why the graph behaves as it does. Despite this I still advise that the main point of analysis should be on the characteristics of the aforementioned 'producer' numbers.
+</p>
+
+<br>
+<h2 data-aos="flip-down" data-aos-duration="2000">2. The Next 900,000... </h2>
+<p data-aos="flip-up">Much like the previous section, this section details the behaviour of the spacing between Lychrels
+    up to a value of 1,000,000. Ten times higher than the previous section!
+</p>
+<iframe data-aos="fade-right" class="igraph" scrolling="no" style="border:none;"  src="First115752Lychrel.html" height="525"></iframe>
+<p data-aos="fade-up">
+    Despite investigating to a much higher value, this graph looks remarkably similar to the last section. The pattern
+    of decay is very similar, with large jumps happening at around the same points (i.e. a change at 30,000 coincides
+    with a change at 30,000). I would not be surprised if this behaviour continued as we looked at graphs up to
+    10,000,000 or 100,000,000 and so on. The most major difference I can note is that towards the extreme end of the
+    Lychrels, there are many more instances of very small distances between Lychrel numbers (i.e. distances of 5 or
+    less).
+</p>
+<iframe data-aos ="fade-left" class="igraph" scrolling="no" style="border:none;"  src="First115752LowerSeedLychrel.html" height="525"></iframe>
+<p data-aos="fade-right">
+    I have included the lower palindrome graph to again demonstrate the similar form this set has to the set of only
+    100,000. Noting the peak at 900,000 mirrored by the peak at 90,000. Interestingly, the peak at 50,000 does not seem
+    to be replicated by a similar peak at 500,000.
+</p>
+<br>
+<h2 data-aos="flip-down" data-aos-duration="2000">3. Digit Frequency of 196</h2>
+<p data-aos="fade-up">I had thought that there could be some certain occurrence of digits that would lead to non-convergence. I'll allow
+    the graphs to speak for themselves on this one.</p>
+<iframe data-aos="fade-right" class="" scrolling="no" style="border:none; width: 49%"  src="Distribution100.html" height="525"></iframe>
+<iframe data-aos="fade-left" class="" scrolling="no"  style="border:none; width: 49%; align: right"  src="Distribution1000.html" height="525"></iframe>
+
+<iframe data-aos="fade-right" class="" scrolling="no" style="border:none; width: 49%"  src="Distribution10000.html" height="525"></iframe>
+<iframe data-aos="fade-left" class="" scrolling="no"  style="border:none; width: 49%; align: right"  src="Distribution100000.html" height="525"></iframe>
+
+<p data-aos="fade-right">
+    From this distribution of the first 1000000 iterations of the n-step palindrome process, it seems unlikely that a
+    higher prevalence of any given number is responsible of 196's stubbornness to converge on a palindrome.
+    <br><br>
+    It would appear that 0 or 9 is slightly more common in this sequence. This does make some sense as that final 9's do
+    cause carrying to occur which disrupts the Lychrel process, but again I am unsure if this is of significance.
+    <br><br>
+    A more rigorous investigation will to be investigate the patterns of more seed Lychrel numbers and non-seed numbers.
+</p>
+
+<p data-aos="fade-left">
+    It appears that above 1000 steps the distribution of integers remains largely unchanged, at least up to 100,000
+    steps. Thus unfortunately I must conclude that there is no particular integer which is 'at fault' for the
+    non-convergence of 196.
+    <br><br>
+    It is appropriate to point out here that up to the 193rd Lychrel derived by applying the process to 196, there is no
+    single common digit that appears in all previous derived Lychrels. That is, of the digits 1-9 each is found missing at least
+    once from a derived Lychrel. Even more interestingly, it would also appear for the 194th derived Lychrel and above, every
+    digit always appears in every derived Lychrel i.e. of the digits 1-9 none are missing from any derived Lychrel. The
+    code for this insight can be found
+    <a href="http://localhost:8888/notebooks/IdeaProjects/Lychrel-Process-Datasets/Universal%20Digits.ipynb">here.</a>
+    <br><br>
+    While this method of distribution analysis ultimately yielded no results, another method (which shall be discussed
+    later) did yield some interesting results.
+</p>
+<h2 data-aos="flip-down" data-aos-duration="2000">4. Digit Freuqency of the first n Lychrels</h2>
+<p data-aos="flip-down">Introduction.</p>
+
+<iframe data-aos="fade-right" class="" scrolling="no" style="border:none; width: 49%; align: left"  src="LychrelDigitDistribution10000.html" height="525"></iframe>
+<iframe data-aos="fade-left" class="" scrolling="no"  style="border:none; width: 49%; align: right"  src="LychrelDigitDistribution100000.html" height="525"></iframe>
+
+<iframe data-aos="fade-left" class="" scrolling="no"  style="border:none; width: 49%; text-align: right"  align="right" src="LychrelDigitDistribution1000000.html" height="525"></iframe>
+
+<br><br><br><br><br><br><br><br><br><br><br>
+
+<p style="align: left" data-aos="fade-right">
+    This distribution looks at all Lychrel Numbers up to 1000000, it  would appear that there there is a positive
+    correlation with the value of the integers and the likelihood for a number to be a Lychrel. It would appear that
+    there are twice as many 9s as there are 0s over the first 115,752 Lychrel numbers. This behaviour makes some sense
+    to me; the higher a digit is the more carrying will occur during addition, disrupting the Lychrel process.
+    <br><br>
+    As usual I am unsure if there is much significance in this, but it does reveal some of the properties that make a Lychrel number.
+    </p>
+
+    <br><br>
+    <br><br>
+    <br><br>
+
+
+<div style="width: 100%" id="github-text">
+    <p style="width: 100%" data-aos="fade-right" data-aos-anchor="#github-text" data-aos-anchor-placement="bottom-bottom">
+        <br><br>
+        The code for the production of
+        <a href="https://github.com/talidemestre/Lychrel-Process-Datasets/blob/master/Lowest%20Palindrome.ipynb">distance graphs</a>
+        and
+        <a href="https://github.com/talidemestre/Lychrel-Process-Datasets/blob/master/Lychrel%20Integer%20Distribution.ipynb">both</a>
+        <a href="https://github.com/talidemestre/Lychrel-Process-Datasets/blob/master/196%20Distribution.ipynb">distribution graphs</a>
+        are also available.
+    </p>
+</div>
+
+</div>
+<script type="text/javascript">
+    $(window).on('load', function() {
+        //$('#body').show();
+        $("body").css("overflow-y", "visible");
+        $('#msg').hide();
+        AOS.init();
+    });
+
+    $(window).on('beforeunload', function() {
+        $(window).scrollTop(0);
+    });
+</script>
+<script>
+</script>
+</body>
+</html>

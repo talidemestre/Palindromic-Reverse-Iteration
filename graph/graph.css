@@ -1,0 +1,47 @@
+@font-face {
+    font-family: "borg-font";
+    src: url("borg.ttf");
+}
+
+p {
+    color: whitesmoke;
+    font-family: sans-serif;
+    margin-right: 5%;
+    margin-left: 5%;
+    text-align: justify;
+}
+
+ul {
+    color: whitesmoke;
+    font-family: sans-serif;
+    margin-right: 5%;
+    margin-left: 5%;
+    text-justify: inter-word;
+}
+
+h1 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: center;
+    font-size: 60px
+}
+
+h2 {
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-align: left;
+    margin-right: 5%;
+    margin-left: 5%;
+}
+
+.centred {
+
+    margin: 0 auto;
+    text-align: center;
+}
+
+.igraph {
+    margin-right: 5%;
+    margin-left: 5%;
+    width: 90%;
+}
